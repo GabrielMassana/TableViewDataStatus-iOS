@@ -12,7 +12,20 @@ class TableViewDataStatus: UITableView {
     
     //MARK: - Accessors
     
+    /**
+    View to display when the Data Source View is empty.
+    */
     var emptyView: UIView?
+    
+    /**
+     View to display when the Data Source View is loading.
+     */
+    var loadingView: UIView?
+    
+    /**
+     Indicates that loading actions have finished
+     */
+    var didFinishLoadingContentActions: Bool = true
     
     //MARK - Init
     
@@ -36,6 +49,10 @@ class TableViewDataStatus: UITableView {
             
             updateEmptyView()
         }
+        else
+        {
+            updateLoadingView()
+        }
     }
     
     //MARK - LayoutSubviews
@@ -44,8 +61,17 @@ class TableViewDataStatus: UITableView {
         
         super.layoutSubviews()
         
-        if (emptyView != nil) {
+        if (loadingView != nil) {
             
+            if (((loadingView!.superview) != nil)) {
+                
+                updateLoadingView()
+            }
+            
+            self.bringSubviewToFront(loadingView!)
+        }
+        else
+        {
             if (((emptyView!.superview) != nil)) {
                 
                 updateEmptyView()
@@ -60,6 +86,11 @@ class TableViewDataStatus: UITableView {
     override func endUpdates() {
         
         super.endUpdates()
+        
+        if (loadingView != nil) {
+            
+            updateLoadingView()
+        }
         
         updateEmptyView()
     }
@@ -98,6 +129,37 @@ class TableViewDataStatus: UITableView {
         }
     }
     
+    //MARK - UpdateLoadingView
+
+    func updateLoadingView() {
+
+        if (loadingView != nil) {
+            
+            if (hasData() ||
+                didFinishLoadingContentActions) {
+                
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        
+                        self.loadingView!.alpha = 0.0
+                        
+                        }, completion: { (Bool) -> Void in
+                            
+                            self.loadingView?.removeFromSuperview()
+                    })
+            }
+            else
+            {
+                loadingView!.alpha = 0.0
+                addSubview(loadingView!)
+                loadingView!.updateConstraints()
+                
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    
+                    self.loadingView!.alpha = 1.0
+                })
+            }
+        }
+    }
     //MARK - HasData
     
     /**
@@ -115,5 +177,40 @@ class TableViewDataStatus: UITableView {
         }
         
         return hasData
+    }
+    
+    /**
+     Notify the tableView that the loading is starting.
+     */
+    func willLoadContent() {
+        
+        didFinishLoadingContentActions = false
+    }
+    
+    /**
+    Notify the tableView that the loading has finished.
+    
+    - parameter hasData : YES if there is data in the tableView, NO otherwise.
+    */
+    func didFinishLoadingContent(hasData: Bool) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            if (self.loadingView?.superview != nil) {
+                
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    
+                    self.loadingView!.alpha = 0.0
+                    
+                    }, completion: { (Bool) -> Void in
+                        
+                        self.loadingView?.removeFromSuperview()
+                })
+            }
+            
+            self.updateEmptyView()
+            
+            self.didFinishLoadingContentActions = true
+        }
     }
 }
