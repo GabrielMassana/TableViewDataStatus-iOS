@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TableViewDataStatus"
-  s.version      = "0.0.0"
+  s.version      = "0.0.1"
   s.summary      = "Table View to control Data Status. Allows to add loading and empty views."
 
   s.homepage     = "https://github.com/GabrielMassana"
