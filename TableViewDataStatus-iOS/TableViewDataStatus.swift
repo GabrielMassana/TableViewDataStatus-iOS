@@ -8,24 +8,24 @@
 
 import UIKit
 
-class TableViewDataStatus: UITableView {
+public class TableViewDataStatus: UITableView {
     
     //MARK: - Accessors
     
     /**
     View to display when the Data Source View is empty.
     */
-    var emptyView: UIView?
+    public var emptyView: UIView?
     
     /**
      View to display when the Data Source View is loading.
      */
-    var loadingView: UIView?
+    public var loadingView: UIView?
     
     /**
      Indicates that loading actions have finished
      */
-    var didFinishLoadingContentActions: Bool = true
+    public var didFinishLoadingContentActions: Bool = true
     
     //MARK - Init
     
@@ -34,6 +34,8 @@ class TableViewDataStatus: UITableView {
      
      - parameter frame: A rectangle specifying the initial location and size of the table view in its superview’s coordinates. The frame of the table view changes as table cells are added and deleted.
      - parameter style: A constant that specifies the style of the table view. See Table View Style for descriptions of valid constants.
+     
+     - returns: Returns an initialized UITableView object, or nil if the object could not be successfully initialized.
      */
     override init(frame: CGRect, style: UITableViewStyle) {
         
@@ -42,8 +44,12 @@ class TableViewDataStatus: UITableView {
     
     /**
      Returns an object initialized from data in a given unarchiver.
+     
+     - parameter aDecoder: An unarchiver object.
+
+     - returns: Returns an initialized UITableView object, or nil if the object could not be successfully initialized.
      */
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
     }
@@ -53,7 +59,7 @@ class TableViewDataStatus: UITableView {
     /**
      Reloads the rows and sections of the table view.
      */
-    override func reloadData() {
+    override public func reloadData() {
         
         super.reloadData()
         
@@ -72,7 +78,7 @@ class TableViewDataStatus: UITableView {
     /**
      Lays out subviews.
      */
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         
         super.layoutSubviews()
         
@@ -101,7 +107,7 @@ class TableViewDataStatus: UITableView {
     /**
      Concludes a series of method calls that insert, delete, select, or reload rows and sections of the table view.
      */
-    override func endUpdates() {
+    override public func endUpdates() {
         
         super.endUpdates()
         
@@ -118,7 +124,7 @@ class TableViewDataStatus: UITableView {
     /**
     Updates the visibility of the empty view depending on the table view data.
     */
-    func updateEmptyView() {
+    public func updateEmptyView() {
         
         if (emptyView != nil) {
             
@@ -152,7 +158,7 @@ class TableViewDataStatus: UITableView {
     /**
      Updates the visibility of the empty view depending on the table view data.
      */
-    func updateLoadingView() {
+    public func updateLoadingView() {
 
         if (loadingView != nil) {
             
@@ -181,10 +187,13 @@ class TableViewDataStatus: UITableView {
             }
         }
     }
+    
     //MARK - HasData
     
     /**
-    Checks if the table view has data or not.
+     Checks if the table view has data or not.
+     
+     - returns: true if the tableview has Data. No otherwise.
     */
     private func hasData() -> Bool {
         
@@ -203,7 +212,7 @@ class TableViewDataStatus: UITableView {
     /**
      Notify the tableView that the loading is starting.
      */
-    func willLoadContent() {
+    public func willLoadContent() {
         
         didFinishLoadingContentActions = false
     }
@@ -213,7 +222,7 @@ class TableViewDataStatus: UITableView {
     
     - parameter hasData : YES if there is data in the tableView, NO otherwise.
     */
-    func didFinishLoadingContent(hasData: Bool) {
+    public func didFinishLoadingContent(hasData: Bool) {
         
         dispatch_async(dispatch_get_main_queue()) {
             
