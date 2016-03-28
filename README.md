@@ -1,9 +1,9 @@
 # TableViewDataStatus-iOS
 
-[![Version](https://img.shields.io/cocoapods/v/TableViewDataStatus.svg?style=flat-square)](http://cocoapods.org/pods/TableViewDataStatus)
-[![License](https://img.shields.io/cocoapods/l/TableViewDataStatus.svg?style=flat-square)](http://cocoapods.org/pods/TableViewDataStatus)
-[![Platform](https://img.shields.io/cocoapods/p/TableViewDataStatus.svg?style=flat-square)](http://cocoapods.org/pods/TableViewDataStatus)
-[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/TableViewDataStatus.svg?style=flat-square)](http://cocoapods.org/pods/TableViewDataStatus)
+[![Version](https://img.shields.io/cocoapods/v/TableViewDataStatus.svg?style=flat-square)](https://cocoapods.org/pods/TableViewDataStatus)
+[![License](https://img.shields.io/cocoapods/l/TableViewDataStatus.svg?style=flat-square)](https://cocoapods.org/pods/TableViewDataStatus)
+[![Platform](https://img.shields.io/cocoapods/p/TableViewDataStatus.svg?style=flat-square)](https://cocoapods.org/pods/TableViewDataStatus)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/TableViewDataStatus.svg?style=flat-square)](https://cocoapods.org/pods/TableViewDataStatus)
 [![Build Status](https://img.shields.io/travis/GabrielMassana/TableViewDataStatus-iOS/master.svg?style=flat-square)](https://travis-ci.org/GabrielMassana/TableViewDataStatus-iOS)
 
 ##   What is it?
