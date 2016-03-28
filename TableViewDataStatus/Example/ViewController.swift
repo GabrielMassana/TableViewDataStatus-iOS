@@ -83,6 +83,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     //MARK: - FakeAPICallAndComplition
     
+    /**
+     Fake API call method. 
+     At the begining of the method willLoadContent() is called to update the loadingView visibility.
+     At the end of the APi call didFinishLoadingContent() is called to update again the views visibilities.
+     */
     func fakeAPICallAndComplition() {
         
         // Call this method before the API call.
