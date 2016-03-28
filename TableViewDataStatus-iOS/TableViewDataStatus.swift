@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Table View to control Data Status. The table view automatically controls the visibility of the views.
 public class TableViewDataStatus: UITableView {
     
     //MARK: - Accessors
