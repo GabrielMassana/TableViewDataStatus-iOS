@@ -11,8 +11,7 @@ import UIKit
 /// Table View to control Data Status. The table view automatically controls the visibility of the views.
 public class TableViewDataStatus: UITableView {
     
-    //MARK: - Accessors
-    
+    //MARK: - Accessors    
     
     /// View to display when the Data Source View is empty.
     public var emptyView: UIView?
