@@ -12,19 +12,14 @@ public class TableViewDataStatus: UITableView {
     
     //MARK: - Accessors
     
-    /**
-    View to display when the Data Source View is empty.
-    */
+    
+    /// View to display when the Data Source View is empty.
     public var emptyView: UIView?
     
-    /**
-     View to display when the Data Source View is loading.
-     */
+    /// View to display when the Data Source View is loading.
     public var loadingView: UIView?
     
-    /**
-     Indicates that loading actions have finished
-     */
+    /// Indicates that loading actions have finished
     public var didFinishLoadingContentActions: Bool = true
     
     //MARK - Init
@@ -37,7 +32,7 @@ public class TableViewDataStatus: UITableView {
      
      - returns: Returns an initialized UITableView object, or nil if the object could not be successfully initialized.
      */
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override public init(frame: CGRect, style: UITableViewStyle) {
         
         super.init(frame: frame, style: style)
     }
