@@ -13,7 +13,18 @@
 		7A718A7A1CA856C20011FD58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A718A781CA856C20011FD58 /* Main.storyboard */; };
 		7A718A7C1CA856C20011FD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A718A7B1CA856C20011FD58 /* Assets.xcassets */; };
 		7A718A7F1CA856C20011FD58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A718A7D1CA856C20011FD58 /* LaunchScreen.storyboard */; };
+		7A98F1DA1CA9C95A0013B07B /* TableViewDataStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98F1D91CA9C95A0013B07B /* TableViewDataStatusTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A98F1DC1CA9C95A0013B07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A718A691CA856C20011FD58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A718A701CA856C20011FD58;
+			remoteInfo = TableViewDataStatus;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7A2F2D1D1CA893AF0060E9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,10 +35,20 @@
 		7A718A7B1CA856C20011FD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A718A7E1CA856C20011FD58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A718A801CA856C20011FD58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A98F1D71CA9C9590013B07B /* TableViewDataStatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewDataStatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A98F1D91CA9C95A0013B07B /* TableViewDataStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataStatusTests.swift; sourceTree = "<group>"; };
+		7A98F1DB1CA9C95A0013B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7A718A6E1CA856C20011FD58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A98F1D41CA9C9590013B07B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7A718A731CA856C20011FD58 /* TableViewDataStatus */,
+				7A98F1D81CA9C95A0013B07B /* TableViewDataStatusTests */,
 				7A718A721CA856C20011FD58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				7A718A711CA856C20011FD58 /* TableViewDataStatus.app */,
+				7A98F1D71CA9C9590013B07B /* TableViewDataStatusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +104,15 @@
 				7A718A801CA856C20011FD58 /* Info.plist */,
 			);
 			path = TableViewDataStatus;
+			sourceTree = "<group>";
+		};
+		7A98F1D81CA9C95A0013B07B /* TableViewDataStatusTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A98F1D91CA9C95A0013B07B /* TableViewDataStatusTests.swift */,
+				7A98F1DB1CA9C95A0013B07B /* Info.plist */,
+			);
+			path = TableViewDataStatusTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,18 +135,40 @@
 			productReference = 7A718A711CA856C20011FD58 /* TableViewDataStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7A98F1D61CA9C9590013B07B /* TableViewDataStatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A98F1E01CA9C95A0013B07B /* Build configuration list for PBXNativeTarget "TableViewDataStatusTests" */;
+			buildPhases = (
+				7A98F1D31CA9C9590013B07B /* Sources */,
+				7A98F1D41CA9C9590013B07B /* Frameworks */,
+				7A98F1D51CA9C9590013B07B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A98F1DD1CA9C95A0013B07B /* PBXTargetDependency */,
+			);
+			name = TableViewDataStatusTests;
+			productName = TableViewDataStatusTests;
+			productReference = 7A98F1D71CA9C9590013B07B /* TableViewDataStatusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7A718A691CA856C20011FD58 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Gabriel Massana";
 				TargetAttributes = {
 					7A718A701CA856C20011FD58 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					7A98F1D61CA9C9590013B07B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7A718A701CA856C20011FD58;
 					};
 				};
 			};
@@ -132,6 +186,7 @@
 			projectRoot = "";
 			targets = (
 				7A718A701CA856C20011FD58 /* TableViewDataStatus */,
+				7A98F1D61CA9C9590013B07B /* TableViewDataStatusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +199,13 @@
 				7A718A7F1CA856C20011FD58 /* LaunchScreen.storyboard in Resources */,
 				7A718A7C1CA856C20011FD58 /* Assets.xcassets in Resources */,
 				7A718A7A1CA856C20011FD58 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A98F1D51CA9C9590013B07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +222,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A98F1D31CA9C9590013B07B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A98F1DA1CA9C95A0013B07B /* TableViewDataStatusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A98F1DD1CA9C95A0013B07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A718A701CA856C20011FD58 /* TableViewDataStatus */;
+			targetProxy = 7A98F1DC1CA9C95A0013B07B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7A718A781CA856C20011FD58 /* Main.storyboard */ = {
@@ -287,6 +365,34 @@
 			};
 			name = Release;
 		};
+		7A98F1DE1CA9C95A0013B07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = TableViewDataStatusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewDataStatus.app/TableViewDataStatus";
+			};
+			name = Debug;
+		};
+		7A98F1DF1CA9C95A0013B07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = TableViewDataStatusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewDataStatus.app/TableViewDataStatus";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -307,6 +413,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7A98F1E01CA9C95A0013B07B /* Build configuration list for PBXNativeTarget "TableViewDataStatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A98F1DE1CA9C95A0013B07B /* Debug */,
+				7A98F1DF1CA9C95A0013B07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
