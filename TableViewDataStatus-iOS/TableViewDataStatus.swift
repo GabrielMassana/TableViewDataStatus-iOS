@@ -29,11 +29,20 @@ class TableViewDataStatus: UITableView {
     
     //MARK - Init
     
+    /**
+     Initializes and returns a table view object having the given frame and style.
+     
+     - parameter frame: A rectangle specifying the initial location and size of the table view in its superview’s coordinates. The frame of the table view changes as table cells are added and deleted.
+     - parameter style: A constant that specifies the style of the table view. See Table View Style for descriptions of valid constants.
+     */
     override init(frame: CGRect, style: UITableViewStyle) {
         
         super.init(frame: frame, style: style)
     }
     
+    /**
+     Returns an object initialized from data in a given unarchiver.
+     */
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
@@ -41,22 +50,28 @@ class TableViewDataStatus: UITableView {
     
     //MARK - ReloadData
     
+    /**
+     Reloads the rows and sections of the table view.
+     */
     override func reloadData() {
         
         super.reloadData()
         
-        if (emptyView != nil) {
+        if (loadingView != nil) {
             
-            updateEmptyView()
+            updateLoadingView()
         }
         else
         {
-            updateLoadingView()
+            updateEmptyView()
         }
     }
     
     //MARK - LayoutSubviews
     
+    /**
+     Lays out subviews.
+     */
     override func layoutSubviews() {
         
         super.layoutSubviews()
@@ -83,6 +98,9 @@ class TableViewDataStatus: UITableView {
     
     //MARK - EndUpdates
     
+    /**
+     Concludes a series of method calls that insert, delete, select, or reload rows and sections of the table view.
+     */
     override func endUpdates() {
         
         super.endUpdates()
@@ -131,6 +149,9 @@ class TableViewDataStatus: UITableView {
     
     //MARK - UpdateLoadingView
 
+    /**
+     Updates the visibility of the empty view depending on the table view data.
+     */
     func updateLoadingView() {
 
         if (loadingView != nil) {
@@ -165,7 +186,7 @@ class TableViewDataStatus: UITableView {
     /**
     Checks if the table view has data or not.
     */
-    func hasData() -> Bool {
+    private func hasData() -> Bool {
         
         var hasData = false
         
