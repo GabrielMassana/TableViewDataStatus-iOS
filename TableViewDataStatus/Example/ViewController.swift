@@ -85,12 +85,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func fakeAPICallAndComplition() {
         
+        // Call this method before the API call.
         tableView.willLoadContent()
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC)))
         
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             
+            // Call this method on finish the API call.
             self.tableView.didFinishLoadingContent(false)
         }
     }
