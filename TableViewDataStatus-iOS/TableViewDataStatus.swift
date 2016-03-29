@@ -190,7 +190,7 @@ public class TableViewDataStatus: UITableView {
      
      - returns: true if the tableview has Data. No otherwise.
     */
-    private func hasData() -> Bool {
+    public func hasData() -> Bool {
         
         var hasData = false
         
