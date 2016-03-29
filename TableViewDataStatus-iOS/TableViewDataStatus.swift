@@ -22,7 +22,7 @@ public class TableViewDataStatus: UITableView {
     /// Indicates that loading actions have finished
     public var didFinishLoadingContentActions: Bool = true
     
-    //MARK - Init
+    //MARK: - Init
     
     /**
      Initializes and returns a table view object having the given frame and style.
@@ -49,7 +49,7 @@ public class TableViewDataStatus: UITableView {
         super.init(coder: aDecoder)
     }
     
-    //MARK - ReloadData
+    //MARK: - ReloadData
     
     /**
      Reloads the rows and sections of the table view.
@@ -68,7 +68,7 @@ public class TableViewDataStatus: UITableView {
         }
     }
     
-    //MARK - LayoutSubviews
+    //MARK: - LayoutSubviews
     
     /**
      Lays out subviews.
@@ -97,7 +97,7 @@ public class TableViewDataStatus: UITableView {
         }
     }
     
-    //MARK - EndUpdates
+    //MARK: - EndUpdates
     
     /**
      Concludes a series of method calls that insert, delete, select, or reload rows and sections of the table view.
@@ -114,12 +114,12 @@ public class TableViewDataStatus: UITableView {
         updateEmptyView()
     }
     
-    //MARK - UpdateEmptyView
+    //MARK: - UpdateEmptyView
     
     /**
     Updates the visibility of the empty view depending on the table view data.
     */
-    public func updateEmptyView() {
+    private func updateEmptyView() {
         
         if (emptyView != nil) {
             
@@ -148,12 +148,12 @@ public class TableViewDataStatus: UITableView {
         }
     }
     
-    //MARK - UpdateLoadingView
+    //MARK: - UpdateLoadingView
 
     /**
      Updates the visibility of the empty view depending on the table view data.
      */
-    public func updateLoadingView() {
+    private func updateLoadingView() {
 
         if (loadingView != nil) {
             
@@ -183,7 +183,7 @@ public class TableViewDataStatus: UITableView {
         }
     }
     
-    //MARK - HasData
+    //MARK: - HasData
     
     /**
      Checks if the table view has data or not.
@@ -204,6 +204,8 @@ public class TableViewDataStatus: UITableView {
         return hasData
     }
     
+    //MARK: - LoadingContent
+
     /**
      Notify the tableView that the loading is starting.
      */
