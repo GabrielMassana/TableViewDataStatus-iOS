@@ -116,8 +116,6 @@ class TableViewDataStatusTests: XCTestCase {
         
         tableView!.willLoadContent()
         
-        print(tableView?.loadingView?.alpha)
-        
         XCTAssertEqual(NSNumber(float: Float(tableView!.loadingView!.alpha)), NSNumber(float:1.0), "loadingView should be visible")
     }
     
@@ -139,8 +137,6 @@ class TableViewDataStatusTests: XCTestCase {
         
         tableView!.reloadData()
         
-        print(tableView?.emptyView?.alpha)
-        
         XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:0.0), "emptyView shouldn't be visible")
     }
     
@@ -151,7 +147,49 @@ class TableViewDataStatusTests: XCTestCase {
         
         tableView!.reloadData()
         
-        print(tableView?.emptyView?.alpha)
+        XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:1.0), "emptyView should be visible")
+    }
+    
+    // MARK: - LayoutSubviews
+    
+    func test_layoutSubviews_emptyViewNotVisibleWithData () {
+        
+        tableView!.dataSource = mockDataSource
+        tableView!.emptyView = emptyView!
+        
+        tableView!.layoutSubviews()
+        
+        XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:0.0), "emptyView shouldn't be visible")
+    }
+    
+    func test_layoutSubviews_emptyViewVisibleWithoutData () {
+        
+        tableView!.dataSource = mockDataSourceNoRows
+        tableView!.emptyView = emptyView!
+        
+        tableView!.layoutSubviews()
+        
+        XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:1.0), "emptyView should be visible")
+    }
+    
+    // MARK: - EndUpdates
+    
+    func test_endUpdates_emptyViewNotVisibleWithData () {
+        
+        tableView!.dataSource = mockDataSource
+        tableView!.emptyView = emptyView!
+        
+        tableView!.endUpdates()
+        
+        XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:0.0), "emptyView shouldn't be visible")
+    }
+    
+    func test_endUpdates_emptyViewVisibleWithoutData () {
+        
+        tableView!.dataSource = mockDataSourceNoRows
+        tableView!.emptyView = emptyView!
+        
+        tableView!.endUpdates()
         
         XCTAssertEqual(NSNumber(float: Float(tableView!.emptyView!.alpha)), NSNumber(float:1.0), "emptyView should be visible")
     }
