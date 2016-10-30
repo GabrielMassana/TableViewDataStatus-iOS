@@ -165,9 +165,13 @@
 				TargetAttributes = {
 					7A718A701CA856C20011FD58 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = X3A9998GNV;
+						LastSwiftMigration = 0800;
 					};
 					7A98F1D61CA9C9590013B07B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = X3A9998GNV;
+						LastSwiftMigration = 0800;
 						TestTargetID = 7A718A701CA856C20011FD58;
 					};
 				};
@@ -345,11 +349,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3A9998GNV;
 				INFOPLIST_FILE = TableViewDataStatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -357,11 +363,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3A9998GNV;
 				INFOPLIST_FILE = TableViewDataStatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -370,11 +378,13 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = X3A9998GNV;
 				INFOPLIST_FILE = TableViewDataStatusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatusTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewDataStatus.app/TableViewDataStatus";
 			};
 			name = Debug;
@@ -384,11 +394,13 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = X3A9998GNV;
 				INFOPLIST_FILE = TableViewDataStatusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Massana.TableViewDataStatusTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableViewDataStatus.app/TableViewDataStatus";
 			};
 			name = Release;
@@ -421,6 +433,7 @@
 				7A98F1DF1CA9C95A0013B07B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

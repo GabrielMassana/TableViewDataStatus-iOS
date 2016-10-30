@@ -24,9 +24,12 @@ class ViewController: UIViewController, UITableViewDataSource {
      */
     lazy var emptyView: UIView = {
         
-        let emptyView: UIView = UIView(frame: CGRect.init(x: 0.0, y: 0.0, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)))
+        let emptyView: UIView = UIView(frame: CGRect.init(x: 0.0,
+                                                          y: 0.0,
+                                                          width: UIScreen.main.bounds.width,
+                                                          height: UIScreen.main.bounds.height))
         
-        emptyView.backgroundColor = UIColor.orangeColor()
+        emptyView.backgroundColor = UIColor.orange
         
         return emptyView
     }()
@@ -36,9 +39,12 @@ class ViewController: UIViewController, UITableViewDataSource {
      */
     lazy var loadingView: UIView = {
         
-        let loadingView: UIView = UIView(frame: CGRect.init(x: 0.0, y: 0.0, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)))
+        let loadingView: UIView = UIView(frame: CGRect.init(x: 0.0,
+                                                            y: 0.0,
+                                                            width: UIScreen.main.bounds.width,
+                                                            height: UIScreen.main.bounds.height))
         
-        loadingView.backgroundColor = UIColor.greenColor()
+        loadingView.backgroundColor = UIColor.green
         
         return loadingView
     }()
@@ -48,7 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource {
      */
     lazy var tableView: TableViewDataStatus = {
         
-        let tableView: TableViewDataStatus = TableViewDataStatus.init(frame: UIScreen.mainScreen().bounds, style: .Plain)
+        let tableView: TableViewDataStatus = TableViewDataStatus.init(frame: UIScreen.main.bounds,
+                                                                      style: .plain)
         
         tableView.emptyView = self.emptyView
         tableView.loadingView = self.loadingView
@@ -69,14 +76,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     //MARK: - UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayWithNoData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCellIdentifier", for: indexPath)
         
         return cell
     }
@@ -93,9 +100,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Call this method before the API call.
         tableView.willLoadContent()
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC)))
+        let delayTime = DispatchTime.now() + Double(Int64(5.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
             
             // Call this method on finish the API call.
             self.tableView.didFinishLoadingContent(false)

@@ -9,18 +9,18 @@
 import UIKit
 
 /// Table View to control Data Status. The table view automatically controls the visibility of the views.
-public class TableViewDataStatus: UITableView {
+open class TableViewDataStatus: UITableView {
     
     //MARK: - Accessors
     
     /// View to display when the Data Source View is empty.
-    public var emptyView: UIView?
+    open var emptyView: UIView?
     
     /// View to display when the Data Source View is loading.
-    public var loadingView: UIView?
+    open var loadingView: UIView?
     
     /// Indicates that loading actions have finished
-    public var didFinishLoadingContentActions: Bool = true
+    open var didFinishLoadingContentActions: Bool = true
     
     //MARK: - Init
     
@@ -54,7 +54,7 @@ public class TableViewDataStatus: UITableView {
     /**
      Reloads the rows and sections of the table view.
      */
-    override public func reloadData() {
+    override open func reloadData() {
         
         super.reloadData()
         
@@ -73,7 +73,7 @@ public class TableViewDataStatus: UITableView {
     /**
      Lays out subviews.
      */
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         
         super.layoutSubviews()
         
@@ -84,7 +84,7 @@ public class TableViewDataStatus: UITableView {
                 updateLoadingView()
             }
             
-            self.bringSubviewToFront(loadingView!)
+            self.bringSubview(toFront: loadingView!)
         }
         else
         {
@@ -93,7 +93,7 @@ public class TableViewDataStatus: UITableView {
                 updateEmptyView()
             }
             
-            self.bringSubviewToFront(emptyView!)
+            self.bringSubview(toFront: emptyView!)
         }
     }
     
@@ -102,7 +102,7 @@ public class TableViewDataStatus: UITableView {
     /**
      Concludes a series of method calls that insert, delete, select, or reload rows and sections of the table view.
      */
-    override public func endUpdates() {
+    override open func endUpdates() {
         
         super.endUpdates()
         
@@ -119,13 +119,13 @@ public class TableViewDataStatus: UITableView {
     /**
     Updates the visibility of the empty view depending on the table view data.
     */
-    private func updateEmptyView() {
+    fileprivate func updateEmptyView() {
         
         if (emptyView != nil) {
             
             if (hasData()) {
                 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     
                     self.emptyView!.alpha = 0.0
                     
@@ -140,7 +140,7 @@ public class TableViewDataStatus: UITableView {
                 addSubview(emptyView!)
                 emptyView!.updateConstraints()
                 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     
                     self.emptyView!.alpha = 1.0
                 })
@@ -153,14 +153,14 @@ public class TableViewDataStatus: UITableView {
     /**
      Updates the visibility of the empty view depending on the table view data.
      */
-    private func updateLoadingView() {
+    fileprivate func updateLoadingView() {
 
         if (loadingView != nil) {
             
             if (hasData() ||
                 didFinishLoadingContentActions) {
                 
-                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
                         
                         self.loadingView!.alpha = 0.0
                         
@@ -175,7 +175,7 @@ public class TableViewDataStatus: UITableView {
                 addSubview(loadingView!)
                 loadingView!.updateConstraints()
                 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     
                     self.loadingView!.alpha = 1.0
                 })
@@ -190,11 +190,11 @@ public class TableViewDataStatus: UITableView {
      
      - returns: true if the tableview has Data. No otherwise.
     */
-    public func hasData() -> Bool {
+    open func hasData() -> Bool {
         
         var hasData = false
         
-        let numberOfRowsInSectionZero = numberOfRowsInSection(0)
+        let numberOfRowsInSectionZero = numberOfRows(inSection: 0)
         
         if (numberOfRowsInSectionZero > 0) {
             
@@ -209,7 +209,7 @@ public class TableViewDataStatus: UITableView {
     /**
      Notify the tableView that the loading is starting.
      */
-    public func willLoadContent() {
+    open func willLoadContent() {
         
         didFinishLoadingContentActions = false
     }
@@ -219,13 +219,13 @@ public class TableViewDataStatus: UITableView {
     
     - parameter hasData : YES if there is data in the tableView, NO otherwise.
     */
-    public func didFinishLoadingContent(hasData: Bool) {
+    open func didFinishLoadingContent(_ hasData: Bool) {
         
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             
             if (self.loadingView?.superview != nil) {
                 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     
                     self.loadingView!.alpha = 0.0
                     
